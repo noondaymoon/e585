@@ -1,7 +1,7 @@
 var getstatus = function(){ //ページを取得してアレコレする
 	
-	//var rooter = HTTPGET ( "192.168.1.1/en/conn_index.asp");
-	var rooter = HTTPGET ( "https://dl.dropboxusercontent.com/u/4570910/conn_index.asp");
+	var rooter = HTTPGET ( "192.168.1.1/en/conn_index.asp");
+	//var rooter = HTTPGET ( "https://dl.dropboxusercontent.com/u/4570910/conn_index.asp");
 	
 	//sig
 	var getcellinfo = rooter.match(/var cellinfo  = \[(.*?)\]/i);

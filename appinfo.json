@@ -145,11 +145,6 @@
                 "type": "png"
             },
             {
-                "file": "images/microsd.png",
-                "name": "ICON_MSD",
-                "type": "png"
-            },
-            {
                 "file": "images/connect.png",
                 "name": "ICON_CNCT",
                 "type": "png"
