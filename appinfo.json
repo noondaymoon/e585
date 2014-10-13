@@ -1,0 +1,233 @@
+{
+    "appKeys": {
+        "KEY_BATT": 4,
+        "KEY_CNCT": 2,
+        "KEY_CRR": 5,
+        "KEY_CSPD": 7,
+        "KEY_CTIME": 9,
+        "KEY_MSD": 6,
+        "KEY_NTYPE": 1,
+        "KEY_SIG": 0,
+        "KEY_TRSF": 8,
+        "KEY_WIFI": 3
+    },
+    "capabilities": [
+        ""
+    ],
+    "companyName": "noondaymoon",
+    "longName": "rooter",
+    "projectType": "native",
+    "resources": {
+        "media": [
+            {
+                "file": "images/microsds.png",
+                "name": "ICON_MSDS",
+                "type": "png"
+            },
+            {
+                "file": "images/batt19.png",
+                "name": "ICON_BATT19",
+                "type": "png"
+            },
+            {
+                "file": "images/batt18.png",
+                "name": "ICON_BATT18",
+                "type": "png"
+            },
+            {
+                "file": "images/batt17.png",
+                "name": "ICON_BATT17",
+                "type": "png"
+            },
+            {
+                "file": "images/batt16.png",
+                "name": "ICON_BATT16",
+                "type": "png"
+            },
+            {
+                "file": "images/batt15.png",
+                "name": "ICON_BATT15",
+                "type": "png"
+            },
+            {
+                "file": "images/batt14.png",
+                "name": "ICON_BATT14",
+                "type": "png"
+            },
+            {
+                "file": "images/batt13.png",
+                "name": "ICON_BATT13",
+                "type": "png"
+            },
+            {
+                "file": "images/batt12.png",
+                "name": "ICON_BATT12",
+                "type": "png"
+            },
+            {
+                "file": "images/batt11.png",
+                "name": "ICON_BATT11",
+                "type": "png"
+            },
+            {
+                "file": "images/batt10.png",
+                "name": "ICON_BATT10",
+                "type": "png"
+            },
+            {
+                "file": "images/wifi5.png",
+                "name": "ICON_WIFI5",
+                "type": "png"
+            },
+            {
+                "file": "images/wifi4.png",
+                "name": "ICON_WIFI4",
+                "type": "png"
+            },
+            {
+                "file": "images/wifi3.png",
+                "name": "ICON_WIFI3",
+                "type": "png"
+            },
+            {
+                "file": "images/wifi2.png",
+                "name": "ICON_WIFI2",
+                "type": "png"
+            },
+            {
+                "file": "images/wifi1.png",
+                "name": "ICON_WIFI1",
+                "type": "png"
+            },
+            {
+                "file": "images/wifi0.png",
+                "name": "ICON_WIFI0",
+                "type": "png"
+            },
+            {
+                "file": "images/transfar.png",
+                "name": "ICON_TRSF",
+                "type": "png"
+            },
+            {
+                "file": "images/speed.png",
+                "name": "ICON_SPDM",
+                "type": "png"
+            },
+            {
+                "file": "images/signal5.png",
+                "name": "ICON_SIG5",
+                "type": "png"
+            },
+            {
+                "file": "images/signal4.png",
+                "name": "ICON_SIG4",
+                "type": "png"
+            },
+            {
+                "file": "images/signal3.png",
+                "name": "ICON_SIG3",
+                "type": "png"
+            },
+            {
+                "file": "images/signal2.png",
+                "name": "ICON_SIG2",
+                "type": "png"
+            },
+            {
+                "file": "images/signal1.png",
+                "name": "ICON_SIG1",
+                "type": "png"
+            },
+            {
+                "file": "images/network.png",
+                "name": "ICON_ANT",
+                "type": "png"
+            },
+            {
+                "file": "images/microsd.png",
+                "name": "ICON_MSD",
+                "type": "png"
+            },
+            {
+                "file": "images/connect.png",
+                "name": "ICON_CNCT",
+                "type": "png"
+            },
+            {
+                "file": "images/clock.png",
+                "name": "ICON_CLK",
+                "type": "png"
+            },
+            {
+                "file": "images/batt9.png",
+                "name": "ICON_BATT9",
+                "type": "png"
+            },
+            {
+                "file": "images/batt8.png",
+                "name": "ICON_BATT8",
+                "type": "png"
+            },
+            {
+                "file": "images/batt7.png",
+                "name": "ICON_BATT7",
+                "type": "png"
+            },
+            {
+                "file": "images/batt6.png",
+                "name": "ICON_BATT6",
+                "type": "png"
+            },
+            {
+                "file": "images/batt5.png",
+                "name": "ICON_BATT5",
+                "type": "png"
+            },
+            {
+                "file": "images/batt4.png",
+                "name": "ICON_BATT4",
+                "type": "png"
+            },
+            {
+                "file": "images/batt3.png",
+                "name": "ICON_BATT3",
+                "type": "png"
+            },
+            {
+                "file": "images/batt2.png",
+                "name": "ICON_BATT2",
+                "type": "png"
+            },
+            {
+                "file": "images/batt1.png",
+                "name": "ICON_BATT1",
+                "type": "png"
+            },
+            {
+                "file": "images/batt0.png",
+                "name": "ICON_BATT0",
+                "type": "png"
+            },
+            {
+                "characterRegex": "[0-9,a-z,B,K,M,G, ,/,.,:]",
+                "file": "fonts/DroidSans-Bold.ttf",
+                "name": "FONT_DROIDB_18",
+                "type": "font"
+            },
+            {
+                "characterRegex": "[0-9,s,E,D,H,B,K,M,G, ,/,:,.]",
+                "file": "fonts/DroidSans-Bold.ttf",
+                "name": "FONT_DROIDB_11",
+                "type": "font"
+            }
+        ]
+    },
+    "shortName": "rooter",
+    "uuid": "066133a3-a3ad-4c5c-b7fd-9c224dac7641",
+    "versionCode": 1,
+    "versionLabel": "1.0",
+    "watchapp": {
+        "watchface": false
+    }
+}
