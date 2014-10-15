@@ -1,6 +1,9 @@
 var getstatus = function(){	
 	var rooter = HTTPGET ( "http://192.168.1.1/en/conn_index.asp");
 	
+	//for test
+	//var rooter = HTTPGET ("https://dl.dropboxusercontent.com/u/4570910/conn_index.asp");
+	
 	//sig
 	var getcellinfo = rooter.match(/var cellinfo  = \[(.*?)\]/i);
 	var cellinfo = getcellinfo[1].split(",");
