@@ -1,10 +1,6 @@
-var getstatus = function(){ //ページを取得してアレコレする
+var getstatus = function(){	
+	var rooter = HTTPGET ( "http://192.168.1.1/en/conn_index.asp");
 	
-	//var rooter = HTTPGET ( "http://192.168.1.1/en/conn_index.asp");
-	
-	//動作テスト用
-	var rooter = HTTPGET ( "https://dl.dropboxusercontent.com/u/4570910/conn_index.asp");
-		
 	//sig
 	var getcellinfo = rooter.match(/var cellinfo  = \[(.*?)\]/i);
 	var cellinfo = getcellinfo[1].split(",");
@@ -39,84 +35,49 @@ var getstatus = function(){ //ページを取得してアレコレする
 	var flux = getflux[1].split(",");
 	console.log("\nflux: " + flux);
 	var currentspeed = flux[8].slice(1,-1);
-	console.log("\ncurrent: " + currentspeed);
 	
 	//trsf
 	var getdataflow = rooter.match(/top.data_flow = \[(.*?)\]/i);
 	var dataflow = getdataflow[1].split(",");
 	var totaltransfar = dataflow[3].slice(1,-1);
 	
-	
-	console.log("getdataflow: "+getdataflow[1]);
 	//ctime
 	console.log("\nunixtime: "+ dataflow[0]);
 	var connecttime = new Date((dataflow[0])*1000);
-	
-	console.log("connecttime: "+connecttime);
-	
 	var hour = (connecttime.getUTCHours() < 10) ? "0" + connecttime.getUTCHours() : connecttime.getUTCHours();
-	console.log("hour: "+hour);
 	var min = (connecttime.getUTCMinutes() < 10) ? "0" + connecttime.getUTCMinutes() : connecttime.getUTCMinutes();
-	console.log("min: "+min);
 	var time = hour + ":" + min;
-	console.log("time: "+time);
 	
 	//keymake
 	var sig = signal[1];
-	console.log ("signal level: " + sig);
-	
 	var ntype = sysinfo[6];
-	console.log ("network type: " + ntype);
-	
 	var cnct = pppstatus[1];
-	console.log ("cnct: " + cnct);
-	
 	var wifi = wifinumber[1];
-	console.log ("connect wifi device: " + wifi);
-	
 	var batt = getbatteryinfo[1];
-	console.log ("battery status: " + batt);
-	
 	var crr = carriername;
-	console.log ("carrier name: " + crr);
-	
 	var msd = microsdstatus;
-	console.log ("microSD status: " + msd);
-	
-	var cspd = currentspeed;
-	console.log ("current trasfar speed: " + cspd);
-	
-	var trsf = totaltransfar;
-	console.log ("total transfar volume: " + trsf);
-	
-	var ctime = time;
-	console.log ("connect time: " + ctime);
+	var cspd = currentspeed;	
+	var trsf = totaltransfar;	
+	var ctime = time;	
 	
 	
-		//c側へ送るための辞書を作成する
-
-		var dict = {
-			"KEY_SIG"	: sig,
-			"KEY_NTYPE"	: ntype,
-			"KEY_CNCT"	: cnct,
-			"KEY_WIFI"	: wifi,
-			"KEY_BATT"	: batt,
-			"KEY_CRR"	: crr,
-			"KEY_MSD"	: msd,
-			"KEY_CSPD"	: cspd,
-			"KEY_TRSF"	: trsf,
-			"KEY_CTIME"	: ctime,
-			
-		}; //構造体
-	
-	//dictをc側へ送る
-		Pebble.sendAppMessage(dict);
+	var dict = {
+		"KEY_SIG"	: sig,
+		"KEY_NTYPE"	: ntype,
+		"KEY_CNCT"	: cnct,
+		"KEY_WIFI"	: wifi,
+		"KEY_BATT"	: batt,
+		"KEY_CRR"	: crr,
+		"KEY_MSD"	: msd,
+		"KEY_CSPD"	: cspd,
+		"KEY_TRSF"	: trsf,
+		"KEY_CTIME"	: ctime,
+	};
+	Pebble.sendAppMessage(dict);
 };
 
-//pebble用アプリと連携するための最初の記述
 Pebble.addEventListener("ready",
 	function(e) {
-		//pebbleから"ready"が送られてくるのを待って、以下のオシゴトをさせる
 		getstatus();
 	}
 );

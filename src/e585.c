@@ -55,7 +55,6 @@ void process_tuple(Tuple *t)
 		else if (strcmp (sig_buffer, "5") == 0){
 			bitmap_layer_set_bitmap (sig_layer, gbitmap_create_with_resource(RESOURCE_ID_ICON_SIG5));}
 		else {layer_set_hidden (bitmap_layer_get_layer (sig_layer), true);}
-		APP_LOG(APP_LOG_LEVEL_INFO, "incoming_sig: %s", sig_buffer);
 		break;
 		
 		//network type
@@ -76,7 +75,6 @@ void process_tuple(Tuple *t)
 		else if (strcmp (ntype_buffer, "7") == 0){
 			text_layer_set_text (ntype_layer, "HSPA");}
 		else {text_layer_set_text (ntype_layer, "");}
-		APP_LOG(APP_LOG_LEVEL_INFO, "incoming_ntype: %s", ntype_buffer);
 		break;
 		
 		//connect
@@ -104,7 +102,6 @@ void process_tuple(Tuple *t)
 		else if (strcmp (wifi_buffer, "5") == 0){
 			bitmap_layer_set_bitmap (wifi_layer, gbitmap_create_with_resource(RESOURCE_ID_ICON_WIFI5));}
 		else {layer_set_hidden (bitmap_layer_get_layer (wifi_layer), true);}
-		APP_LOG(APP_LOG_LEVEL_INFO, "incoming_wifi: %s", wifi_buffer);
 		break;
 		
 		//battery_status
@@ -131,7 +128,6 @@ void process_tuple(Tuple *t)
 		else if (strcmp (batt_buffer, "1,4") == 0){
 			bitmap_layer_set_bitmap (batt_layer, gbitmap_create_with_resource(RESOURCE_ID_ICON_BATT14));}
 		else {layer_set_hidden (bitmap_layer_get_layer (batt_layer), true);}
-		APP_LOG(APP_LOG_LEVEL_INFO, "incoming_batt: %s", batt_buffer);
 		break;
 		
 		//carrier_name
@@ -142,7 +138,6 @@ void process_tuple(Tuple *t)
 		bitmap_layer_set_bitmap(spdm_layer, gbitmap_create_with_resource(RESOURCE_ID_ICON_SPDM));
 		bitmap_layer_set_bitmap(arw_layer, gbitmap_create_with_resource(RESOURCE_ID_ICON_TRSF));
 		bitmap_layer_set_bitmap(clk_layer, gbitmap_create_with_resource(RESOURCE_ID_ICON_CLK));
-		APP_LOG(APP_LOG_LEVEL_INFO, "incoming_crr: %s", crr_buffer);
 		break;
 		
 		//microSD
@@ -166,28 +161,24 @@ void process_tuple(Tuple *t)
 			layer_set_hidden(bitmap_layer_get_layer(msd_layer), true);
 			
 		}
-		APP_LOG(APP_LOG_LEVEL_INFO, "incoming_msd: %s", msd_buffer);
 		break;
 		
 		//current_speed
 		case KEY_CSPD:
 		snprintf (cspd_buffer, sizeof("xxxxxxxxxx"), "%s", string_value);
 		text_layer_set_text(cspd_layer, (char*) &cspd_buffer);
-		APP_LOG(APP_LOG_LEVEL_INFO, "incoming_cspd: %s", cspd_buffer);
 		break;
 		
 		//transfar_volume
 		case KEY_TRSF:
 		snprintf (trsf_buffer, sizeof("xxxxxxxxxx"), "%s", string_value);
 		text_layer_set_text(trsf_layer, (char*) &trsf_buffer);
-		APP_LOG(APP_LOG_LEVEL_INFO, "incoming_trsf: %s", trsf_buffer);
 		break;
 		
 		//connect_time
 		case KEY_CTIME:
 		snprintf (ctime_buffer, sizeof("xx:xx"), "%s", string_value);
 		text_layer_set_text(ctime_layer, (char*) &ctime_buffer);
-		APP_LOG(APP_LOG_LEVEL_INFO, "incoming_ctime: %s", ctime_buffer);
 		break;
 			
 	}
