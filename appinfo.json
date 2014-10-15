@@ -20,33 +20,34 @@
     "resources": {
         "media": [
             {
+                "file": "images/menu_icon.png",
+                "menuIcon": true,
+                "name": "IMAGE_MENU_ICON",
+                "type": "png"
+            },
+            {
+                "file": "images/cbr.png",
+                "name": "OBJ_CBR",
+                "type": "png"
+            },
+            {
+                "file": "images/cbl.png",
+                "name": "OBJ_CBL",
+                "type": "png"
+            },
+            {
+                "file": "images/ctr.png",
+                "name": "OBJ_CTR",
+                "type": "png"
+            },
+            {
+                "file": "images/ctl.png",
+                "name": "OBJ_CTL",
+                "type": "png"
+            },
+            {
                 "file": "images/microsds.png",
                 "name": "ICON_MSDS",
-                "type": "png"
-            },
-            {
-                "file": "images/batt19.png",
-                "name": "ICON_BATT19",
-                "type": "png"
-            },
-            {
-                "file": "images/batt18.png",
-                "name": "ICON_BATT18",
-                "type": "png"
-            },
-            {
-                "file": "images/batt17.png",
-                "name": "ICON_BATT17",
-                "type": "png"
-            },
-            {
-                "file": "images/batt16.png",
-                "name": "ICON_BATT16",
-                "type": "png"
-            },
-            {
-                "file": "images/batt15.png",
-                "name": "ICON_BATT15",
                 "type": "png"
             },
             {
@@ -155,31 +156,6 @@
                 "type": "png"
             },
             {
-                "file": "images/batt9.png",
-                "name": "ICON_BATT9",
-                "type": "png"
-            },
-            {
-                "file": "images/batt8.png",
-                "name": "ICON_BATT8",
-                "type": "png"
-            },
-            {
-                "file": "images/batt7.png",
-                "name": "ICON_BATT7",
-                "type": "png"
-            },
-            {
-                "file": "images/batt6.png",
-                "name": "ICON_BATT6",
-                "type": "png"
-            },
-            {
-                "file": "images/batt5.png",
-                "name": "ICON_BATT5",
-                "type": "png"
-            },
-            {
                 "file": "images/batt4.png",
                 "name": "ICON_BATT4",
                 "type": "png"
@@ -205,15 +181,15 @@
                 "type": "png"
             },
             {
-                "characterRegex": "[0-9,a-z,B,K,M,G, ,/,.,:]",
+                "characterRegex": "[0-9,s,A,B,D,E,G,H,K,M,P,U,S, ,/,:,.]",
                 "file": "fonts/DroidSans-Bold.ttf",
-                "name": "FONT_DROIDB_18",
+                "name": "FONT_DROIDB_11",
                 "type": "font"
             },
             {
-                "characterRegex": "[0-9,s,E,D,H,B,K,M,G, ,/,:,.]",
+                "characterRegex": "[0-9,a-z,B,K,M,G, ,/,.,:]",
                 "file": "fonts/DroidSans-Bold.ttf",
-                "name": "FONT_DROIDB_11",
+                "name": "FONT_DROIDB_18",
                 "type": "font"
             }
         ]
