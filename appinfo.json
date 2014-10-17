@@ -20,6 +20,16 @@
     "resources": {
         "media": [
             {
+                "file": "images/batt5.png",
+                "name": "ICON_BATT5",
+                "type": "png"
+            },
+            {
+                "file": "images/batt15.png",
+                "name": "ICON_BATT15",
+                "type": "png"
+            },
+            {
                 "file": "images/menu_icon.png",
                 "menuIcon": true,
                 "name": "IMAGE_MENU_ICON",
@@ -197,7 +207,7 @@
     "shortName": "rooter",
     "uuid": "066133a3-a3ad-4c5c-b7fd-9c224dac7641",
     "versionCode": 1,
-    "versionLabel": "1.0",
+    "versionLabel": "1.01",
     "watchapp": {
         "watchface": false
     }

@@ -83,7 +83,7 @@ void process_tuple(Tuple *t)
 		if (strcmp (cnct_buffer, "1") == 0){
 			bitmap_layer_set_bitmap(cnct_layer, gbitmap_create_with_resource(RESOURCE_ID_ICON_CNCT));}
 		else {layer_set_hidden(bitmap_layer_get_layer(cnct_layer), true);}
-		APP_LOG(APP_LOG_LEVEL_INFO, "incoming_cnct: %s", cnct_buffer);
+		//APP_LOG(APP_LOG_LEVEL_INFO, "incoming_cnct: %s", cnct_buffer);
 		break;
 		
 		//wifi_number
@@ -107,26 +107,30 @@ void process_tuple(Tuple *t)
 		//battery_status
 		case KEY_BATT:
 		snprintf (batt_buffer, sizeof("x,x"), "%s", string_value);
-		if (strcmp (batt_buffer, "0,0") == 0){
+		if (strcmp (batt_buffer, "0,-") == 0){
 			bitmap_layer_set_bitmap (batt_layer, gbitmap_create_with_resource(RESOURCE_ID_ICON_BATT0));}
-		else if (strcmp (batt_buffer, "0,1") == 0){
+		else if (strcmp (batt_buffer, "0,0") == 0){
 			bitmap_layer_set_bitmap (batt_layer, gbitmap_create_with_resource(RESOURCE_ID_ICON_BATT1));}
-		else if (strcmp (batt_buffer, "0,2") == 0){
+		else if (strcmp (batt_buffer, "0,1") == 0){
 			bitmap_layer_set_bitmap (batt_layer, gbitmap_create_with_resource(RESOURCE_ID_ICON_BATT2));}
-		else if (strcmp (batt_buffer, "0,3") == 0){
+		else if (strcmp (batt_buffer, "0,2") == 0){
 			bitmap_layer_set_bitmap (batt_layer, gbitmap_create_with_resource(RESOURCE_ID_ICON_BATT3));}
-		else if (strcmp (batt_buffer, "0,4") == 0){
+		else if (strcmp (batt_buffer, "0,3") == 0){
 			bitmap_layer_set_bitmap (batt_layer, gbitmap_create_with_resource(RESOURCE_ID_ICON_BATT4));}
-		else if (strcmp (batt_buffer, "1,0") == 0){
+		else if (strcmp (batt_buffer, "0,4") == 0){
+			bitmap_layer_set_bitmap (batt_layer, gbitmap_create_with_resource(RESOURCE_ID_ICON_BATT5));}
+		else if (strcmp (batt_buffer, "1,-") == 0){
 			bitmap_layer_set_bitmap (batt_layer, gbitmap_create_with_resource(RESOURCE_ID_ICON_BATT10));}
-		else if (strcmp (batt_buffer, "1,1") == 0){
+		else if (strcmp (batt_buffer, "1,0") == 0){
 			bitmap_layer_set_bitmap (batt_layer, gbitmap_create_with_resource(RESOURCE_ID_ICON_BATT11));}
-		else if (strcmp (batt_buffer, "1,2") == 0){
+		else if (strcmp (batt_buffer, "1,1") == 0){
 			bitmap_layer_set_bitmap (batt_layer, gbitmap_create_with_resource(RESOURCE_ID_ICON_BATT12));}
-		else if (strcmp (batt_buffer, "1,3") == 0){
+		else if (strcmp (batt_buffer, "1,2") == 0){
 			bitmap_layer_set_bitmap (batt_layer, gbitmap_create_with_resource(RESOURCE_ID_ICON_BATT13));}
-		else if (strcmp (batt_buffer, "1,4") == 0){
+		else if (strcmp (batt_buffer, "1,3") == 0){
 			bitmap_layer_set_bitmap (batt_layer, gbitmap_create_with_resource(RESOURCE_ID_ICON_BATT14));}
+		else if (strcmp (batt_buffer, "1,4") == 0){
+			bitmap_layer_set_bitmap (batt_layer, gbitmap_create_with_resource(RESOURCE_ID_ICON_BATT15));}
 		else {layer_set_hidden (bitmap_layer_get_layer (batt_layer), true);}
 		break;
 		
@@ -165,7 +169,7 @@ void process_tuple(Tuple *t)
 		
 		//current_speed
 		case KEY_CSPD:
-		snprintf (cspd_buffer, sizeof("xxxxxxxxxx"), "%s", string_value);
+		snprintf (cspd_buffer, sizeof("xxxxxxxxxxxx"), "%s", string_value);
 		text_layer_set_text(cspd_layer, (char*) &cspd_buffer);
 		break;
 		

@@ -1,9 +1,6 @@
 var getstatus = function(){	
 	var rooter = HTTPGET ( "http://192.168.1.1/en/conn_index.asp");
 	
-	//for test
-	//var rooter = HTTPGET ("https://dl.dropboxusercontent.com/u/4570910/conn_index.asp");
-	
 	//sig
 	var getcellinfo = rooter.match(/var cellinfo  = \[(.*?)\]/i);
 	var cellinfo = getcellinfo[1].split(",");
@@ -36,7 +33,6 @@ var getstatus = function(){
 	//cspd
 	var getflux = rooter.match(/top.flux= \[(.*?)\]/i);
 	var flux = getflux[1].split(",");
-	console.log("\nflux: " + flux);
 	var currentspeed = flux[8].slice(1,-1);
 	
 	//trsf
@@ -45,7 +41,7 @@ var getstatus = function(){
 	var totaltransfar = dataflow[3].slice(1,-1);
 	
 	//ctime
-	console.log("\nunixtime: "+ dataflow[0]);
+	//console.log("\nunixtime: "+ dataflow[0]);
 	var connecttime = new Date((dataflow[0])*1000);
 	var hour = (connecttime.getUTCHours() < 10) ? "0" + connecttime.getUTCHours() : connecttime.getUTCHours();
 	var min = (connecttime.getUTCMinutes() < 10) ? "0" + connecttime.getUTCMinutes() : connecttime.getUTCMinutes();
