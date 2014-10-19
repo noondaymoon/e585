@@ -231,8 +231,8 @@ void window_load (Window *window)
 	layer_add_child(window_get_root_layer(window), (Layer *) cbr_layer);
 	
 	//signal_level (bitmap)
-	sig_layer = bitmap_layer_create(GRect(0, 0, 36, 36));
-	bitmap_layer_set_alignment(sig_layer, GAlignCenter);
+	sig_layer = bitmap_layer_create(GRect(6, 6, 24, 24));
+	bitmap_layer_set_alignment(sig_layer, GAlignLeft);
 	layer_add_child(window_get_root_layer(window), (Layer *) sig_layer);
 	
 	//network_type (text)

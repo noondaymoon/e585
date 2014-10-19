@@ -20,6 +20,11 @@
     "resources": {
         "media": [
             {
+                "file": "images/window_icon.png",
+                "name": "WINDOW_ICON",
+                "type": "png"
+            },
+            {
                 "file": "images/batt5.png",
                 "name": "ICON_BATT5",
                 "type": "png"
