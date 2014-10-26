@@ -32,6 +32,18 @@ char 	sig_buffer		[4],
 		trsf_buffer		[16],
 		ctime_buffer	[8];
 
+static void send_msg (void) {
+	DictionaryIterator *iter;
+	app_message_outbox_begin(&iter);
+	
+	if (iter == NULL) {
+		return;
+	}
+	
+	app_message_outbox_send();
+	//APP_LOG(APP_LOG_LEVEL_INFO, "msg sent");
+}
+
 //process_appmessage
 void process_tuple(Tuple *t)
 	{
@@ -236,7 +248,7 @@ void window_load (Window *window)
 	layer_add_child(window_get_root_layer(window), (Layer *) sig_layer);
 	
 	//network_type (text)
-	ntype_layer = text_layer_create (GRect(30, 4, 40, 12));
+	ntype_layer = text_layer_create (GRect(28, 4, 40, 12));
 	text_layer_set_background_color(ntype_layer, GColorClear);
 	text_layer_set_text_color(ntype_layer, GColorWhite);
 	text_layer_set_text_alignment(ntype_layer, GTextAlignmentCenter);
@@ -244,7 +256,7 @@ void window_load (Window *window)
 	layer_add_child(window_get_root_layer(window), (Layer *)ntype_layer);
 	
 	//connect (bitmap)
-	cnct_layer = bitmap_layer_create(GRect(32, 20, 36, 8));
+	cnct_layer = bitmap_layer_create(GRect(29, 20, 36, 8));
 	bitmap_layer_set_alignment(cnct_layer, GAlignCenter);
 	layer_add_child(window_get_root_layer(window), (Layer *) cnct_layer);
 	
@@ -340,6 +352,21 @@ void window_unload (Window *window)
 	text_layer_destroy(ctime_layer);
 }
 
+//acceltap
+
+static void accel_tap_handler(AccelAxisType axis, int32_t direction) {
+  send_msg(); //accelapの際にappmessageを送る関数を呼び出す
+  //APP_LOG(APP_LOG_LEVEL_INFO, "acceltap!");
+}
+
+static void handle_init(void) {
+  accel_tap_service_subscribe(accel_tap_handler);
+}
+
+static void handle_deinit(void) {
+  accel_tap_service_unsubscribe();
+}
+
 //windowの表示を構成
 void init()
 	{
@@ -367,6 +394,8 @@ void deinit ()
 int main (void)
 	{
 	init();
+	handle_init();
 	app_event_loop();
+	handle_deinit();
 	deinit();
 }

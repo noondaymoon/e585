@@ -81,6 +81,16 @@ Pebble.addEventListener("ready",
 	}
 );
 
+Pebble.addEventListener("appmessage",
+	function(e) {
+		//console.log("msg recieved");
+		getstatus();
+		//console.log("reloaded!!");
+	}
+);
+
+
+
 function HTTPGET (url) {
 	var req = new XMLHttpRequest();
 	req.open ("GET", url, false);
