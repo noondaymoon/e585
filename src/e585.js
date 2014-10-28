@@ -59,7 +59,6 @@ var getstatus = function(){
 	var trsf = totaltransfar;	
 	var ctime = time;	
 	
-	
 	var dict = {
 		"KEY_SIG"	: sig,
 		"KEY_NTYPE"	: ntype,
@@ -83,13 +82,9 @@ Pebble.addEventListener("ready",
 
 Pebble.addEventListener("appmessage",
 	function(e) {
-		//console.log("msg recieved");
 		getstatus();
-		//console.log("reloaded!!");
 	}
 );
-
-
 
 function HTTPGET (url) {
 	var req = new XMLHttpRequest();

@@ -370,7 +370,6 @@ static void handle_deinit(void) {
 //windowの表示を構成
 void init()
 	{
-	//コピペ
 	window = window_create();
   	window_set_background_color(window, GColorBlack);
  	window_set_fullscreen(window, false);
